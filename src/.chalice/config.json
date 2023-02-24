@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "app_name": "transaction-processor",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "DEBUG": "True",
+        "BUCKET": "stori-transactions-bucket",
+        "EMAIL_FROM": "gabriel.amayapat@gmail.com",
+        "EMAIL_TO": "gabriel.amayapat@gmail.com"
+      }
+    }
+  }
+}

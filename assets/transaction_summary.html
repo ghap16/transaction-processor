@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div style="width:600px; margin: auto;">
+        <img alt="Stori Logo" src="https://media.glassdoor.com/sqll/3357578/stori-card-squareLogo-1617075863024.png">
+        <h1>Transaction Summary</h1>
+        <p>This is a transaction summary of currently year</p>
+        <table role="presentation" cellspacing="0" width="100%" border="1">
+            <thead>
+                <th>Month</th>
+                <th>Total</th>
+                <th>Balance</th>
+                <th>Average Debit</th>
+                <th>Average Credit</th>
+            </thead>
+            <tbody>
+                {% for summary_by_month in summary_by_month %}
+                <tr>
+                    {% set month_name = summary_by_month.get_month_name() %}
+                    <td>{{month_name}}</td>
+                    <td>{{summary_by_month.total}}</td>
+                    <td>{{summary_by_month.balance}}</td>
+                    <td>{{summary_by_month.average_debit}}</td>
+                    <td>{{summary_by_month.average_credit}}</td>
+                </tr>
+                {% endfor %}
+                <tr></tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>{{summary.total}}</td>
+                    <td>{{summary.balance}}</td>
+                    <td>{{summary.average_debit}}</td>
+                    <td>{{summary.average_credit}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
