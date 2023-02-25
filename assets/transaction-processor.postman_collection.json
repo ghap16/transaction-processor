@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "58ff419b-6805-4db3-b75d-d2d3a1e5fa54",
+		"name": "transaction-processor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload CSV",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "///wsl.localhost/Ubuntu/home/ghap/WorkSpace/transaction-processor/assets/transactions_example2.csv"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/upload/csv",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"upload",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/:account_id",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						":account_id"
+					],
+					"variable": [
+						{
+							"key": "account_id",
+							"value": "9c4c02da-dbbb-4201-aa74-b01f6ea26e5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		}
+	]
+}

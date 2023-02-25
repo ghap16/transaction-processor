@@ -1,4 +1,4 @@
-from pydantic import BaseSettings, DirectoryPath, EmailStr
+from pydantic import BaseSettings, EmailStr
 
 
 class Settings(BaseSettings):
