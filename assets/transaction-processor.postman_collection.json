@@ -87,7 +87,7 @@
 	"variable": [
 		{
 			"key": "domain",
-			"value": "http://127.0.0.1:8000",
+			"value": "https://whmpk53c6j.execute-api.us-east-1.amazonaws.com/api/",
 			"type": "default"
 		}
 	]
