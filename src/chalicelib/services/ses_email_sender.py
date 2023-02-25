@@ -1,9 +1,9 @@
+import logging
 from typing import List
 
 import boto3
-import logging
-
 from botocore.exceptions import ClientError
+
 from ..config import settings
 from ..exceptions import EmailSenderError
 from ..interfaces import EmailSenderInterface
@@ -41,14 +41,4 @@ class SESEmailSender(EmailSenderInterface):
                 f"Error sending email through aws, {error}",
                 exc_info=True,
             )
-            raise EmailSenderError(f'Error sending email, {subject}')
-
-    def verify_email(self):
-        try:
-            return self.ses_client.verify_email_identity(EmailAddress=settings.EMAIL_FROM)
-        except ClientError as error:
-            logging.error(
-                f"Error verifying email through aws, {error}",
-                exc_info=True,
-            )
-            raise EmailSenderError(f'Error verifying email, {settings.EMAIL_FROM}')
+            raise EmailSenderError(f"Error sending email, {subject}")

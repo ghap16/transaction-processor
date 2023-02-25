@@ -2,8 +2,7 @@ from typing import List
 
 from ..adapters import ReadCSVFile, TransactionParse
 from ..config import settings
-from ..models import (Account, Transaction, TransactionManager,
-                      TransactionSummaryByMonth)
+from ..models import Account, Transaction, TransactionManager, TransactionSummaryByMonth
 from ..services import SESEmailMessage, SESEmailSender
 
 

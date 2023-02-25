@@ -14,6 +14,6 @@ class TransactionUploader:
     def _set_filename(self) -> None:
         self.filename = f"{settings.PREFIX_FILE}_{self.fileid}.csv"
 
-    def upload(self, raw_file) -> AccountBase:
-        self.file_uploader.upload(filename=self.filename, raw_file=raw_file)
+    def upload(self, raw_stream) -> AccountBase:
+        self.file_uploader.upload(filename=self.filename, raw_stream=raw_stream)
         return AccountBase(id=self.fileid)

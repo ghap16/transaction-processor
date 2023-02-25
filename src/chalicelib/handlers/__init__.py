@@ -1,3 +1,2 @@
 from .transaction_processor import TransactionProcessor
 from .transaction_uploader import TransactionUploader
-from .email_verifier import EmailVerifier

@@ -8,8 +8,6 @@ class UploadTransactionError(ChaliceViewError):
 class EmailMessageError(ChaliceViewError):
     pass
 
-class EmailSenderError(ChaliceViewError):
-    pass
 
-class EmailVerifierError(ChaliceViewError):
+class EmailSenderError(ChaliceViewError):
     pass

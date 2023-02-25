@@ -1,6 +1,5 @@
 import abc
 from typing import AnyStr, List
-from pydantic import EmailStr
 
 
 class ReadCSVFileInterface(abc.ABC):
@@ -21,7 +20,7 @@ class EmailMessageInterface(abc.ABC):
         ...
 
     @abc.abstractmethod
-    def render(self) -> None:
+    def render(self) -> AnyStr:
         ...
 
 
@@ -33,7 +32,7 @@ class EmailSenderInterface(abc.ABC):
         ...
 
 
-class EmailVerifierInterface(abc.ABC):
+class FileUploaderInterface(abc.ABC):
     @abc.abstractmethod
-    def verify(self, email: EmailStr) -> None:
+    def upload(self, filename: str, raw_stream) -> None:
         ...
